@@ -1,0 +1,233 @@
+
+
+<div class="detail-widget">
+    <!-- <div class="hamburguer"><i class="bi bi-list"></i></div> -->
+  <div class="card h-100 fixedCard">
+    <div class="card-body d-flex justify-content-around ">
+      <div class="d-flex trip">
+        <span class="d-flex flex-column " (click)="updateSelectedTrip(1)" [ngClass]="{'active2': selectedTrip === 1}">
+          <p><i class="bi bi-person"></i></p>
+          <p class="fw-bold">Para mi</p>
+        </span>
+
+      </div>
+
+
+      <div class="d-flex trip">
+        <span class="d-flex flex-column" (click)="updateSelectedTrip(2)" [ngClass]="{'active2': selectedTrip === 2}">
+          <p><i class="bi bi-people"></i></p>
+          <p class="fw-bold">Colega</p>
+        </span>
+
+      </div>
+
+
+      <div class="d-flex trip">
+        <span class="d-flex flex-column" (click)="updateSelectedTrip(3)" [ngClass]="{'active2': selectedTrip === 3}">
+          <p><i class="bi bi-person-plus"></i></p>
+          <p class="fw-bold">Invitado</p>
+        </span>
+
+      </div>
+
+
+
+    </div>
+  </div>
+  <div class="card" style="margin-top: 25px; margin-bottom: -33px;">
+    <div class="card-body d-flex steps text-muted">
+      <span (click)="updateSelectedStatus(1)" class="d-flex fs-5" [ngClass]="{'active': selectedStatus === 1}">
+        <p class="me-3">1</p>
+        <p class="step-title">Origen</p>
+      </span>
+      <span (click)="updateSelectedStatus(2)" class="d-flex fs-5" [ngClass]="{'active': selectedStatus === 2}">
+        <p class="me-2">2</p>
+        <p class="step-title">Destino</p>
+      </span>
+      <span (click)="updateSelectedStatus(2)" class="d-flex fs-5" [ngClass]="{'active': selectedStatus === 3}">
+        <p class="me-2">3</p>
+        <p class="step-title">Paso 3</p>
+      </span>
+      <span (click)="updateSelectedStatus(2)" class="d-flex fs-5" [ngClass]="{'active': selectedStatus === 4}">
+        <p class="me-2">4</p>
+        <p class="step-title">Paso 4</p>
+      </span>
+      <span (click)="updateSelectedStatus(2)" class="d-flex fs-5" [ngClass]="{'active': selectedStatus === 5}">
+        <p class="me-2">5</p>
+        <p class="step-title">Paso 5</p>
+      </span>
+      <span (click)="updateSelectedStatus(2)" class="d-flex fs-5" [ngClass]="{'active': selectedStatus === 6}">
+        <p class="me-2">6</p>
+        <p class="step-title">Paso 6</p>
+      </span>
+    </div>
+  </div>
+  <hr class="w-75 ms-auto me-auto">
+  <div *ngIf="selectedStatus===1">
+    <div class="card mb-0" style="box-shadow: none; margin-top: 1px;">
+      <div class="card-body">
+        <select class="form-select fs-5" aria-label="Default select example" style="border: none;">
+          <option selected>Cundinamarca</option>
+          <option value="1">Chapinero</option>
+          <option value="2">Usaquen</option>
+          <option value="3">Fontibon</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body d-flex">
+        <i class="bi bi-geo-alt me-3 fs-2 " style="color:#3dcc99; text-align: center;"></i>
+        <input type="email" class="form-control" value="{{trip.origin}}" style="border: none;" id="exampleFormControlInput1"
+          placeholder="Donde te recogemos?">
+      </div>
+    </div>
+
+    <p class="mt-3 ms-3 fw-bold ">Favoritos</p>
+    <div class="card big mt-2">
+      <div class="card-body">
+        <div class="d-flex align-items-center hover1" (click)="updateOriginAddress('Ivesur')">
+          <p class="favs"><i class="bi bi-star-fill "></i></p>
+          <div class="d-flex flex-column fav">
+            <p class="mb-0 ">Ivesur</p>
+            <p class="mb-0 text-muted">Cra 56 #19-84, Bogota, Colombia</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center mt-4 hover1" (click)="updateOriginAddress('Mi Aguila')">
+          <p class="favs"><i class="bi bi-star-fill "></i></p>
+          <div class="d-flex flex-column fav ">
+            <p class="mb-0 ">Mi Aguila</p>
+            <p class="mb-0 text-muted">Carrera 15 80-90, bogota</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center mt-4 hover1" (click)="updateOriginAddress('Aeropuerto el Dorado')">
+          <p class="favs"><i class="bi bi-star-fill "></i></p>
+          <div class="d-flex flex-column fav ">
+            <p class="mb-0 ">Aeropuerto el Dorado</p>
+            <p class="mb-0 text-muted">Bogota, Colombia</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center mt-4 hover1" (click)="updateOriginAddress('Work')">
+          <p class="favs"><i class="bi bi-star-fill "></i></p>
+          <div class="d-flex flex-column fav ">
+            <p class="mb-0 ">Work</p>
+            <p class="mb-0 text-muted">Carrera 15 80-90, bogota</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center mt-4 hover1" (click)="updateOriginAddress('Home')">
+          <p class="favs"><i class="bi bi-star-fill "></i></p>
+          <div class="d-flex flex-column fav ">
+            <p class="mb-0 ">Home</p>
+            <p class="mb-0 text-muted">Cra 50c #41c-43 Bogota, Colombia</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center mt-4 hover1" (click)="updateOriginAddress('Aeropuerto el Dorado')">
+          <p class="favs"><i class="bi bi-star-fill "></i></p>
+          <div class="d-flex flex-column fav ">
+            <p class="mb-0 ">Aeropuerto el Dorado</p>
+            <p class="mb-0 text-muted">Bogota, Colombia</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center mt-4 hover1" (click)="updateOriginAddress('Work')">
+          <p class="favs"><i class="bi bi-star-fill "></i></p>
+          <div class="d-flex flex-column fav ">
+            <p class="mb-0 ">Work</p>
+            <p class="mb-0 text-muted">Carrera 15 80-90, bogota</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center mt-4 hover1" (click)="updateOriginAddress('Home')">
+          <p class="favs"><i class="bi bi-star-fill "></i></p>
+          <div class="d-flex flex-column fav ">
+            <p class="mb-0 ">Home</p>
+            <p class="mb-0 text-muted">Cra 50c #41c-43 Bogota, Colombia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="selectedStatus===2">
+    <div class="card mb-0" style="box-shadow: none; margin-top: 1px;">
+      <div class="card-body">
+        <select class="form-select fs-5 " aria-label="Default select example" style="border: none;">
+          <option selected>Chapinero</option>
+          <option value="1">Cundinamarca</option>
+          <option value="2">Usaquen</option>
+          <option value="3">Fontibon</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card" >
+      <div class="card-body d-flex">
+        <i class="bi bi-geo-alt me-3 fs-2 " style="color:#3dcc99; text-align: center;"></i>
+        <input type="email" class="form-control" value="{{trip.destination}}"  style="border: none;" id="exampleFormControlInput1"
+          placeholder="Donde te dejamos?">
+      </div>
+    </div>
+
+    <p class="mt-3 ms-3 fw-bold">Favoritos</p>
+    <div class="card big mt-2">
+      <div class="card-body">
+        <div class="d-flex align-items-center hover1 " (click)="updateDestinationAddress('Home')">
+          <p class="favs"><i class="bi bi-star-fill "></i></p>
+          <div class="d-flex flex-column fav ">
+            <p class="mb-0 ">Home</p>
+            <p class="mb-0 text-muted">Cra 50c #41c-43 Bogota, Colombia</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center hover1 mt-4" (click)="updateDestinationAddress('Aeropuerto el Dorado')">
+          <p class="favs"><i class="bi bi-star-fill "></i></p>
+          <div class="d-flex flex-column fav ">
+            <p class="mb-0 ">Aeropuerto el Dorado</p>
+            <p class="mb-0 text-muted">Bogota, Colombia</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center hover1 mt-4" (click)="updateDestinationAddress('Work')">
+          <p class="favs"><i class="bi bi-star-fill "></i></p>
+          <div class="d-flex flex-column fav ">
+            <p class="mb-0 ">Work</p>
+            <p class="mb-0 text-muted">Carrera 15 80-90, bogota</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center hover1 mt-4" (click)="updateDestinationAddress('Home')">
+          <p class="favs"><i class="bi bi-star-fill "></i></p>
+          <div class="d-flex flex-column fav ">
+            <p class="mb-0 ">Home</p>
+            <p class="mb-0 text-muted">Cra 50c #41c-43 Bogota, Colombia</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center hover1 mt-4"  (click)="updateDestinationAddress('Ivesur')">
+          <p class="favs"><i class="bi bi-star-fill "></i></p>
+          <div class="d-flex flex-column fav">
+            <p class="mb-0 ">Ivesur</p>
+            <p class="mb-0 text-muted">Cra 56 #19-84, Bogota, Colombia</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center hover1 mt-4" (click)="updateDestinationAddress('Mi Aguila')">
+          <p class="favs"><i class="bi bi-star-fill "></i></p>
+          <div class="d-flex flex-column fav ">
+            <p class="mb-0 ">Mi Aguila</p>
+            <p class="mb-0 text-muted">Carrera 15 80-90, bogota</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center hover1 mt-4" (click)="updateDestinationAddress('Aeropuerto el Dorado')">
+          <p class="favs"><i class="bi bi-star-fill "></i></p>
+          <div class="d-flex flex-column fav ">
+            <p class="mb-0 ">Aeropuerto el Dorado</p>
+            <p class="mb-0 text-muted">Bogota, Colombia</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center hover1 mt-4" (click)="updateDestinationAddress('Work')">
+          <p class="favs"><i class="bi bi-star-fill "></i></p>
+          <div class="d-flex flex-column fav ">
+            <p class="mb-0 ">Work</p>
+            <p class="mb-0 text-muted">Carrera 15 80-90, bogota</p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
